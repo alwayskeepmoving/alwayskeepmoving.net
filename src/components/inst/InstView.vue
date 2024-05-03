@@ -74,6 +74,7 @@
                     <br>
                     <br>
                     <post />
+                    <br>
                     2023/9/16 GBXIN
                 </div>
             </div>
@@ -118,12 +119,12 @@
     import More from '../icons/More.vue';
     const avatar = {
         akm: "/inst/img/profile/akm.jpg",
-        gbxin: "/inst/img/profile/gbxin.jpg",
+        gbxin: "/inst/img/profile/gbxin.webp",
     };
     const postImg = {
         lullaby_post: "/inst/img/lullaby/post.jpg",
         lullaby_on_air: "/inst/img/lullaby/on_air.jpg",
-        Hello: "/inst/img/main.jpg",
+        Hello: "https://www.dmoe.cc/random.php",
     };
 </script>
 

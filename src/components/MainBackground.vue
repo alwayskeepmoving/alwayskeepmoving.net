@@ -12,7 +12,6 @@
 
 <script setup lang="ts">
     import MainFooter from './MainFooter.vue';
-    import NavigationBar from './NavigationBar.vue';
 </script>
 
 <style scoped>
