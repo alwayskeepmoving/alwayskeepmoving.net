@@ -10,10 +10,10 @@
 
 `npm run dev`
 
-> [!NOTE]
+> [!WARNING]
 > 在运行 `npm run dev` 之前，请先使用 `npm install` 安装依赖。
 
-> [!WARNING]
+> [!NOTE]
 > 在 `package.json`，`scripts` 下的 `dev` 选项中已默认加入了 `--host 0.0.0.0` 参数，以允许通过 IP 地址访问。
 > ```json
 >"scripts": {
