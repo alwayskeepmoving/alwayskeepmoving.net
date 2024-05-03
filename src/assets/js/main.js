@@ -167,10 +167,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (hamburgerActive) {
                 // 如果汉堡按钮处于激活状态，则设置 .globalfx 元素的透明度和模糊
                 globalfx.style.opacity = '100%';
+                globalfx.style.transition = 'all 0.5s cubic-bezier(0.82, 0, 0.58, 1)';
             }
             else {
                 // 否则，重置 .globalfx 元素的透明度
                 globalfx.style.opacity = '0';
+                globalfx.style.transition = 'all 0.7s cubic-bezier(0.82, 0, 0.58, 1)';
             }
 
             // 让商店按钮透明度降低70%并不可点击

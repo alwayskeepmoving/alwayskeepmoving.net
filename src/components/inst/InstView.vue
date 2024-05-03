@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="insimage">
-                    <img :src="postImg.Hello" alt="由はるまきごはん所绘画，此处非商业使用。">
+                    <img :src="postImg.Hello" alt="由 https://www.dmoe.cc/random.php 请求的二次元图片。">
                 </div>
 
                 <InstBar />
