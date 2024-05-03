@@ -17,5 +17,9 @@
 }
 
 @media (any-hover: hover){
-
+    .header-fx:hover{
+        opacity: 1;
+        text-shadow: 0px 0px 2px rgb(233, 233, 233);
+        transition: all 0.3s ease-in-out;
+    }
 }

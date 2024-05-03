@@ -2,7 +2,9 @@
     <DownFxBox />
     <HeaderDownBox title="照片墙"/>
     <MainBackground>
-        <InstBackground />
+        <InstBackground>
+            <InstView />
+        </InstBackground>
     </MainBackground>
     
     <HeaderDOM />
@@ -14,6 +16,7 @@
     import HeaderDOM from './components/HeaderDOM.vue';
     import MainBackground from './components/MainBackground.vue';
     import InstBackground from './components/InstBackground.vue';
+    import InstView from './components/inst/InstView.vue';
 </script>
 
 <style scoped></style>

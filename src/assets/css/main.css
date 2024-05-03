@@ -7,7 +7,7 @@
 
         @font-face {
             font-family: 'Inter';
-            src: url(/fonts/inter.woff2);
+            src: url(../fonts/Inter.woff2);
         }
         
         /* 隐藏滚动条 */
@@ -132,11 +132,17 @@
             font-size: 26px;
             font-weight: 600;
             position: relative;
-            color: #ffffff;
             align-items: center;
             top: 80px;
             user-select: none;
-            transition: all 0.15s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            opacity: 0.9;
+        }
+
+        .header-fx:active{
+            opacity: 1;
+            text-shadow: 0px 0px 2px rgb(233, 233, 233);
+            transition: all 0.1s ease-in-out;
         }
 
         .header-downbox {
@@ -379,7 +385,7 @@
         }
 
         /* shopmenu中文字的参数，右菜单 */
-        .shopmenu-fx {
+        /* .shopmenu-fx {
             font-weight: 600;
             font-size: 26px;
             position: relative;
@@ -389,7 +395,7 @@
             line-height: 2;
             user-select: none;
             transition: all 0.15s ease-in-out;
-        }
+        } */
 
         /* 这个世界，需要白色 */
         .white,

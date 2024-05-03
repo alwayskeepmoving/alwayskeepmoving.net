@@ -16,11 +16,15 @@
     </div>
     <div class="shopmenubox">
         <div class="shopmenu">
-            <div class="shopmenu-fx"><a class="white underline" :href="links.soundcloud_link">在 SoundCloud 上试听</a></div>
+            <!-- <div class="shopmenu-fx"><a class="white underline" :href="links.soundcloud_link">在 SoundCloud 上试听</a></div>
             <div class="shopmenu-fx"><a class="white underline" :href="links.dizzylab_link">在 Dizzylab 上购买</a></div>
             <div class="shopmenu-fx"><a class="white underline" :href="links.beatport_link">在 Beatport 上购买</a></div>
             <div class="shopmenu-fx"><a class="white underline" href="">在 Qobuz 上购买</a></div>
-            <div class="shopmenu-fx"><a class="white underline" href="">在 Juno 上购买</a></div>
+            <div class="shopmenu-fx"><a class="white underline" href="">在 Juno 上购买</a></div> -->
+            <HeaderLink text="前往 akmeow 阿卡喵↗" link=""/>
+            <HeaderLink text="前往 Beatport↗" :link="links.beatport_link"/>
+            <HeaderLink text="前往 Dizzylab↗" :link="links.dizzylab_link"/>
+            <HeaderLink text="前往 SoundCloud↗" :link="links.soundcloud_link"/>
         </div>
     </div>
     <div class="header-topbox">

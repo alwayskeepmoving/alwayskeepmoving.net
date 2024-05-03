@@ -1,10 +1,8 @@
 <template>
     <div class="footer-box">
+
         <div class="footer">
             <div class="footer-logobox">
-                <div>
-                    <img class="footer-logo" src="/img/alwayskeepmoving.svg" alt="alwayskeepmoving logo">
-                </div>
                 <div>
                     <a href="https://space.bilibili.com/2119054500"><img class="footer-logo"
                             src="/img/social/bilibili.svg" alt="在 BiliBili 上关注我们"></a>
@@ -22,6 +20,7 @@
                             src="/img/social/soundcloud.svg" alt="在 SoundCloud 上关注我们"></a>
                 </div>
             </div>
+                <NavigationBar />
             <div class="footer-infobox">
                 <div class="footer-info">
                     <h1>有关本站</h1>
@@ -30,7 +29,7 @@
                 </div>
                 <div class="footer-info">
                     <h1>取得联系</h1>
-                    <h2><a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?group_code=716318729">QQ交流群</a></h2>
+                    <h2><a target="_blank" href="http://qm.qq.com/cgi-bin/qm/qr?group_code=716318729">QQ 交流群</a></h2>
                     <h2><a href="mailto:submission@alwayskeepmoving.net">投递稿件</a></h2>
                     <h2><a href="mailto:cs@alwayskeepmoving.net">联系我们</a></h2>
                 </div>
@@ -46,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-
+import NavigationBar from './NavigationBar.vue';
 </script>
 
 <style scoped>
@@ -80,6 +79,7 @@
     height: 70px;
     display: flex;
     align-items: center;
+    margin-bottom: -10px;
 }
 
 .footer-logo {
@@ -88,7 +88,6 @@
     display: flex;
     margin-left: 20px;
     margin-right: 0;
-    margin-top: 20px;
     user-select: none;
 }
 

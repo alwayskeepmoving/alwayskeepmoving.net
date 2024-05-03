@@ -4,7 +4,7 @@
             <div class="ins-background">
                 <div class="header-mmj"></div>
                 <slot></slot>
-                <MainFooter/>
+                <MainFooter />
             </div>
         </div>
     </div>
@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
     import MainFooter from './MainFooter.vue';
+    import NavigationBar from './NavigationBar.vue';
 </script>
 
 <style scoped>

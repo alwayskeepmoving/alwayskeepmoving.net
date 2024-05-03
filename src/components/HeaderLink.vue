@@ -1,6 +1,7 @@
 <template>
   <a class="header-fx white underline" :href="link">
     <p class="text">{{ text }}</p>
+    <solt></solt>
     <Arrow />
   </a>
 </template>

@@ -2,7 +2,9 @@
     <DownFxBox />
     <HeaderDownBox title="主页仍在构建中..."/>
     <MainBackground>
-        <Coding />
+        <InstBackground>
+            <Coding />
+        </InstBackground>
     </MainBackground>
     <HeaderDOM />
 </template>
