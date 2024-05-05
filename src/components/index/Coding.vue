@@ -1,20 +1,25 @@
 <template>
     <div class="header-mmj"></div>
-    <div class="coding-container">
-        <h2>🛠️
-            <br>
-            Still
-            <br>
-            <span class="animated-gradient">Building...</span>
-            <br>
-            & <span>Testing...</span>
-        </h2>
-        <h3>
-            我知道你很急，但是你先别急（
-        </h3>
-        <p class="text">
-            什么风把您吹到这儿了？这个网站还在搭建和测试中。在其他页面构建完成之前，你可以先行浏览我们的<a href="./inst/">照片墙</a>。
-        </p>
+    <div class="coding">
+
+        <div class="coding-container">
+            <h2>🛠️
+                <br>
+                Still
+                <br>
+                <span class="animated-gradient">Building...</span>
+                <br>
+                & <span>Testing...</span>
+            </h2>
+            <h3>
+                我知道你很急，但是你先别急（
+            </h3>
+            <p class="text">
+                什么风把您吹到这儿了？这个网站还在搭建和测试中。在其他页面构建完成之前，你可以先行浏览我们的<a href="./inst/">照片墙</a>。
+            </p>
+        </div>
+
+
     </div>
 </template>
 
@@ -24,14 +29,17 @@
     margin: 0;
     padding: 0;
 }
+.coding{
+    background-color: rgb(10, 10, 10);
+}
 
 .coding-container {
+    padding: 80px 0 80px 0;
     width: 100%;
     height: 100%;
 }
 
 h2 {
-    margin-top: 20px;
     font-size: 60px;
     font-weight: 600;
     margin-left: 20px;
@@ -52,7 +60,6 @@ h3 {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 40px;
 }
 
 .animated-gradient {
