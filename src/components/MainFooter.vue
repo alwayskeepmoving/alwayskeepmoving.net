@@ -39,7 +39,7 @@
                         <h1>社交媒体</h1>
                         <h2><a target="_blank" :href="sociallinks.netease_music">网易云音乐</a></h2>
                         <h2><a target="_blank" :href="sociallinks.twitter">X (旧 Twitter)</a></h2>
-                        <h2><a target="_blank" :href="sociallinks.bilibili">Bilibili</a></h2>
+                        <h2><a target="_blank" :href="sociallinks.bilibili">BiliBili</a></h2>
                         <h2><a target="_blank" :href="sociallinks.dizzylab">Dizzylab</a></h2>
                         <h2><a target="_blank" :href="sociallinks.soundcloud_link">SoundCloud</a></h2>
                     </div>
