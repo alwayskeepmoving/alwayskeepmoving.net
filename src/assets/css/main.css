@@ -3,6 +3,7 @@
             background-color: rgb(10, 10, 10);
             font-family: 'Inter', 'Misans';
             font-weight: 500;
+            letter-spacing: 0em;
         }
 
         @font-face {

@@ -4,8 +4,9 @@
             <div class="ins-background">
                 <div class="header-mmj"></div>
                 <slot></slot>
-                <MainFooter />
+                
             </div>
+            <MainFooter />
         </div>
     </div>
 </template>
