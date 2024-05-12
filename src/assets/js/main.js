@@ -240,4 +240,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // cookies
+    var privateLink = document.getElementById("privateLink");
+    if (privateLink) {
+        privateLink.addEventListener("click", function () {
+            this.innerHTML = "(ᗜˬᗜ)";
+            setTimeout(() => {
+                this.innerHTML = "隐私政策";
+            }, 1000);
+        });
+    }
+
 });

@@ -61,11 +61,4 @@ const links = {
     margin-left: 6px;
     color: rgb(160, 160, 160);
 }
-@media screen and (min-width:1000px) {
-.navigation-bar {
-    margin-top: 40px;
-}
-
-
-}
 </style>

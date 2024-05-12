@@ -10,38 +10,30 @@
                             moving <br>
                         </h3>
                         <h4>© 2024</h4>
-                        <div class="footer-logobox">
-                            <div>
-                                <a :href="sociallinks.bilibili"><img class="footer-logo" src="/img/social/bilibili.svg"
-                                        title="在 BiliBili 上关注我们"></a>
-                            </div>
-                            <div>
-                                <a :href="sociallinks.twitter"><img class="footer-logo" src="/img/social/twitter.svg"
-                                        title="在 Twiter 上关注我们"></a>
-                            </div>
-                            <div>
-                                <a :href="sociallinks.beatport_link"><img class="footer-logo"
-                                        src="/img/social/beatport.svg" title="在 Beatport 上关注我们"></a>
-                            </div>
-                            <div>
-                                <a :href="sociallinks.soundcloud_link"><img class="footer-logo"
-                                        src="/img/social/soundcloud.svg" title="在 SoundCloud 上关注我们"></a>
-                            </div>
-                        </div>
                     </div>
                     <div class="footer-info">
                         <h1>有关本站</h1>
                         <h2><a href="javascript:void(0)" id="cookies">Cookies</a></h2>
                         <h2><a href="javascript:void(0)">问题反馈</a></h2>
-                        <h2><a href="javascript:void(0)">隐私政策</a></h2>
+                        <h2><a id="privateLink" href="javascript:void(0)">隐私政策</a></h2>
                     </div>
                     <div class="footer-info">
                         <h1>社交媒体</h1>
                         <h2><a target="_blank" :href="sociallinks.bilibili">BiliBili</a></h2>
-                        <h2><a target="_blank" :href="sociallinks.dizzylab">Dizzylab</a></h2>
                         <h2><a target="_blank" :href="sociallinks.netease_music">网易云音乐</a></h2>
-                        <h2><a target="_blank" :href="sociallinks.soundcloud_link">SoundCloud</a></h2>
                         <h2><a target="_blank" :href="sociallinks.twitter">X (旧 Twitter)</a></h2>
+                    </div>
+                    <div class="footer-info">
+                        <h1>流媒体</h1>
+                        <h2><a target="_blank" :href="sociallinks.dizzylab">Dizzylab</a></h2>
+                        <h2><a :href="sociallinks.beatport_link">Beatport</a></h2>
+                        <h2><a target="_blank" :href="sociallinks.bandcamp">Bandcamp</a></h2>
+                    </div>
+                    <div class="footer-info">
+                        <h1>友情链接</h1>
+                        <h2><a href="https://www.dizzylab.net/">Dizzylab</a></h2>
+                        <h2><a href="https://www.akmeow.top">akmeow 阿卡喵</a></h2>
+                        <h2><a href="https://www.polarissmusic.cn">CryolysiS 冷分解</a></h2>
                     </div>
                     <div class="footer-info">
                         <h1>取得联系</h1>
@@ -50,12 +42,32 @@
                         <h2><a href="mailto:submission@alwayskeepmoving.net">投递稿件</a></h2>
                         <h2><a href="mailto:cs@alwayskeepmoving.net">联系我们</a></h2>
                     </div>
-                    <div class="footer-info">
-                        <h1>友情链接</h1>
-                        <h2><a href="https://www.dizzylab.net/">Dizzylab</a></h2>
-                        <h2><a href="https://www.akmeow.top">akmeow 阿卡喵</a></h2>
-                        <h2><a href="https://www.polarissmusic.cn">CryolysiS 冷分解</a></h2>
+                </div>
+
+            </div>
+            <div class="bottom">
+                <div class="footer-logobox">
+                    <div>
+                        <a :href="sociallinks.bilibili"><img class="footer-logo" src="/img/social/bilibili.svg"
+                                title="在 BiliBili 上关注我们"></a>
                     </div>
+                    <div>
+                        <a :href="sociallinks.twitter"><img class="footer-logo" src="/img/social/twitter.svg"
+                                title="在 Twiter 上关注我们"></a>
+                    </div>
+                    <div>
+                        <a :href="sociallinks.beatport_link"><img class="footer-logo" src="/img/social/beatport.svg"
+                                title="在 Beatport 上关注我们"></a>
+                    </div>
+                    <div>
+                        <a :href="sociallinks.soundcloud_link"><img class="footer-logo" src="/img/social/soundcloud.svg"
+                                title="在 SoundCloud 上关注我们"></a>
+                    </div>
+                </div>
+                <div class="status">
+                    <span
+                        style="height: 10px;width: 10px;border-radius: 100%;background-color: rgb(112, 255, 175);margin: 0 0 0 10px;"></span>
+                    <span style="margin: 0 10px 0 6px;">{{ status }}</span>
                 </div>
             </div>
         </div>
@@ -66,6 +78,7 @@
 import NavigationBar from './NavigationBar.vue';
 const sociallinks = {
     bilibili: "https://space.bilibili.com/2119054500",
+    bandcamp: "https://alwayskeepmoving.bandcamp.com/",
     netease_music: "https://music.163.com/#/user/home?id=2010697893",
     dizzylab: "https://www.dizzylab.net/l/AlwaysKeepMoving/",
     soundcloud_link: "https://soundcloud.com/alwayskeepmoving",
@@ -73,6 +86,8 @@ const sociallinks = {
     beatport_link: "https://www.beatport.com/label/alwayskeepmoving-records/102961",
     twitter: "https://twitter.com/ayskeepmoving"
 }
+
+const status = "All systems operational";
 </script>
 
 <style scoped>
@@ -82,8 +97,8 @@ const sociallinks = {
     justify-content: center;
     width: 100%;
     height: auto;
-    --background-color: rgb(10, 10, 10);
-    background-color: var(--background-color);
+    --background-color: linear-gradient(180deg, rgb(20, 20, 20) 0%, rgb(10, 10, 10) 50%);
+    background: var(--background-color);
     border-top: 1px solid #ffffff24;
     user-select: none;
     overflow-y: auto;
@@ -93,39 +108,11 @@ const sociallinks = {
 
 .footer {
     display: block;
-    background-color: var(--background-color);
     height: auto;
     width: 100%;
     margin: auto;
     position: relative;
     flex-direction: column;
-}
-
-.footer-logobox {
-    width: auto;
-    height: 30px;
-    display: none;
-    align-items: center;
-    margin-left: auto;
-    gap: 12px;
-    margin-top: auto;
-    position: absolute;
-    bottom: 0;
-}
-
-.footer-logo {
-    opacity: 0.6;
-    width: auto;
-    height: 16px;
-    display: flex;
-    margin-right: 0;
-    user-select: none;
-    transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
-}
-
-.footer-logo:hover {
-    opacity: 1;
-    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
 }
 
 .footer-info {
@@ -136,12 +123,14 @@ const sociallinks = {
     margin-left: 20px;
     margin-right: 20px;
     color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .footer-infobox {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     width: auto;
     height: auto;
-    margin-bottom: 30px;
 }
 
 .footer-info h1 {
@@ -158,7 +147,7 @@ const sociallinks = {
 }
 
 .footer-info h3 {
-    display: none;
+    display: block;
     font-size: 32px;
     font-weight: 500;
     line-height: 0.8;
@@ -191,11 +180,71 @@ const sociallinks = {
     width: 100%;
 }
 
+.bottom {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: auto;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-logobox {
+    display: flex;
+    width: auto;
+    height: 30px;
+    
+    margin-left: 20px;
+    margin-right: auto;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    opacity: 0.6;
+    width: auto;
+    height: 16px;
+    display: flex;
+    margin-right: 0;
+    user-select: none;
+    transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.footer-logo:hover {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: auto;
+    border-radius: 0.5rem;
+    font-size: 8px;
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: 20px;
+    color: rgb(160, 160, 160);
+}
+
 /* 响应式布局 */
-@media screen and (min-width:1000px) {
+@media screen and (min-width:520px) {
+    .footer-infobox {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width:840px) {
 
     .footer-infobox {
         display: flex;
+        /* display: grid; */
+        /* grid-template-columns: repeat(2, minmax(0, 1fr)); */
+        justify-content: space-between;
+        gap: 1.5rem;
     }
 
     .footer-container {
@@ -203,7 +252,7 @@ const sociallinks = {
     }
 
     .footer-info {
-        margin-right: 60px;
+        margin-bottom: 0;
     }
 
     .footer-info h3 {
@@ -214,8 +263,8 @@ const sociallinks = {
         display: flex;
     }
 
-    .footer-infobox {
-        margin-bottom: 60px;
+    .status{
+        display: flex;
     }
 }
 

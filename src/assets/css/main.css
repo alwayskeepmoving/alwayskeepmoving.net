@@ -66,6 +66,7 @@
             left: 0;
             opacity: 0;
             background-position: center 50px;
+            transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1);
             backdrop-filter: blur(50px);
             -webkit-backdrop-filter: blur(50px);
             z-index: 1;
