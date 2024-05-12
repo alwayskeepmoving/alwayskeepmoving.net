@@ -75,11 +75,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const shopMenu = document.querySelector('.shopmenubox');
     const downfx = document.querySelector('.downfxbox');
     const globalfxdown = document.querySelector('.globalfx-down');
+    //获取.globalfx 元素
+    const globalfx = document.querySelector('.globalfx');
 
     let isShopfxExpanded = false;
 
     // 定义一个标记变量，用来记录.shopmenu的状态
     let isExpanded = false;
+
+    function changeBlur(value) {
+        document.documentElement.style.setProperty("--initblur", value);
+    }
 
     // 监听.shop元素的点击事件 
     if (shop) {
@@ -88,13 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isExpanded) {
                 shopMenu.style.height = '50px';
                 body.style.overflow = 'auto';
-                globalfx.style.opacity = '0';
+                changeBlur('0');
                 hamburger.style.opacity = '100%';
+                globalfx.style.opacity = '0';
+                globalfx.style.transition = 'all 0.7s cubic-bezier(0.82, 0, 0.58, 1)';
                 hamburger.classList.remove('noclick');
             } else {
                 shopMenu.style.height = '100%';
                 body.style.overflow = 'hidden';
+                changeBlur('20px');
                 globalfx.style.opacity = '100%';
+                globalfx.style.transition = 'all 0.5s cubic-bezier(0.82, 0, 0.58, 1)';
                 hamburger.style.opacity = '30%';
                 hamburger.classList.add('noclick');
             }
@@ -151,10 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-    //获取.globalfx 元素
-    const globalfx = document.querySelector('.globalfx');
-
     // 定义一个标志变量，用于跟踪汉堡按钮的状态
     let hamburgerActive = false;
 
@@ -166,11 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (hamburgerActive) {
                 // 如果汉堡按钮处于激活状态，则设置 .globalfx 元素的透明度和模糊
+                changeBlur('20px');
                 globalfx.style.opacity = '100%';
                 globalfx.style.transition = 'all 0.5s cubic-bezier(0.82, 0, 0.58, 1)';
             }
             else {
                 // 否则，重置 .globalfx 元素的透明度
+                changeBlur('0');
                 globalfx.style.opacity = '0';
                 globalfx.style.transition = 'all 0.7s cubic-bezier(0.82, 0, 0.58, 1)';
             }
@@ -202,12 +210,16 @@ document.addEventListener("DOMContentLoaded", function () {
             // 切换.headerdown元素的高度，以及按钮特效蒙版的透明度
             if (isExpanded) {
                 downfx.style.height = '0';
+                changeBlur('0');
                 globalfxdown.style.opacity = '0';
+                globalfxdown.style.backdropFilter = 'blur(0px)';
                 body.style.overflow = 'auto';
 
             } else {
                 downfx.style.height = '400px';
+                changeBlur('20px');
                 globalfxdown.style.opacity = '100%';
+                globalfxdown.style.backdropFilter = 'blur(20px)';
                 body.style.overflow = 'hidden';
             }
 
@@ -250,5 +262,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000);
         });
     }
-
 });
