@@ -48,13 +48,14 @@
             <div class="bottom">
                 <div class="footer-logobox">
                     <div>
+                        <a :href="sociallinks.twitter"><img class="footer-logo" src="/img/social/x.svg"
+                                title="在 Twiter 上关注我们"></a>
+                    </div>
+                    <div>
                         <a :href="sociallinks.bilibili"><img class="footer-logo" src="/img/social/bilibili.svg"
                                 title="在 BiliBili 上关注我们"></a>
                     </div>
-                    <div>
-                        <a :href="sociallinks.twitter"><img class="footer-logo" src="/img/social/twitter.svg"
-                                title="在 Twiter 上关注我们"></a>
-                    </div>
+                    
                     <div>
                         <a :href="sociallinks.beatport_link"><img class="footer-logo" src="/img/social/beatport.svg"
                                 title="在 Beatport 上关注我们"></a>
@@ -87,7 +88,7 @@ const sociallinks = {
     twitter: "https://twitter.com/ayskeepmoving"
 }
 
-const status = "All systems operational";
+const status = "All Systems Normal";
 </script>
 
 <style scoped>
@@ -221,7 +222,6 @@ const status = "All systems operational";
     justify-content: center;
     height: 30px;
     width: auto;
-    text-transform: uppercase;
     font-size: 10px;
     font-weight: 400;
     margin-left: auto;

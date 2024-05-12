@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var cookiesLink = document.getElementById("cookies");
     if (cookiesLink) {
         cookiesLink.addEventListener("click", function () {
-            this.innerHTML = "🍪🍪🍪";
+            this.innerHTML = "🍪🍪";
             setTimeout(() => {
                 this.innerHTML = "Cookies";
             }, 1000);
