@@ -212,14 +212,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 downfx.style.height = '0';
                 changeBlur('0');
                 globalfxdown.style.opacity = '0';
-                globalfxdown.style.backdropFilter = 'blur(0px)';
                 body.style.overflow = 'auto';
 
             } else {
                 downfx.style.height = '400px';
                 changeBlur('20px');
                 globalfxdown.style.opacity = '100%';
-                globalfxdown.style.backdropFilter = 'blur(20px)';
                 body.style.overflow = 'hidden';
             }
 

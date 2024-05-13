@@ -1,15 +1,15 @@
 <template>
-  <div class="header-downbox">
+  <div class="header-downbox" id="headerDownBox">
     <div class="header-down">
       <div class="header">
-      <span class="left">{{ title }}</span>
-      <div id="chevron" class="chevron">
-        <span class="chevron-left"></span>
-        <span class="chevron-right"></span>
+        <span class="left">{{ title }}</span>
+        <div id="chevron" class="chevron">
+          <span class="chevron-left"></span>
+          <span class="chevron-right"></span>
+        </div>
+        <div class="yjjx">详情</div>
       </div>
-      <div class="yjjx">详情</div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -24,34 +24,34 @@ defineProps({
 
 document.addEventListener("DOMContentLoaded", function () {
   function changeBlur(value) {
-        document.documentElement.style.setProperty("--initblur", value);
+    document.documentElement.style.setProperty("--initblur", value);
   }
   let isExpanded = false;
   const body = document.querySelector('body');
   const globalfxdown = document.querySelector('.globalfx-down');
   const headerDownbox = document.querySelector('.header-downbox');
   const chevron = document.getElementById('chevron')
-    if (chevron) {
-        chevron.addEventListener('click', () => {
-            if (isExpanded) {
-                headerDownbox.style.height = '50px';
-                globalfxdown.style.opacity = '0';
-                changeBlur('0');
-                body.style.overflow = 'auto';
-                chevron.classList.remove('chevron-tobe');
+  if (chevron) {
+    chevron.addEventListener('click', () => {
+      if (isExpanded) {
+        headerDownbox.style.height = '50px';
+        globalfxdown.style.opacity = '0';
+        changeBlur('0');
+        body.style.overflow = 'auto';
+        chevron.classList.remove('chevron-tobe');
 
-            } else {
-                headerDownbox.style.height = '200px';
-                globalfxdown.style.opacity = '100%';
-                changeBlur('20px');
-                body.style.overflow = 'hidden';
-                chevron.classList.toggle('chevron-tobe');
-            }
-            // 更新标记变量的值
-            isExpanded = !isExpanded
-            
-        });
-    }
+      } else {
+        headerDownbox.style.height = '200px';
+        globalfxdown.style.opacity = '100%';
+        changeBlur('20px');
+        body.style.overflow = 'hidden';
+        chevron.classList.toggle('chevron-tobe');
+      }
+      // 更新标记变量的值
+      isExpanded = !isExpanded
+
+    });
+  }
 });
 </script>
 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   display: flex;
   align-items: center;
   z-index: 2;
-  transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: height 1s cubic-bezier(0.86, 0, 0.07, 1), top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .header-downbox::after {
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
   transition: all 1s cubic-bezier(0.86, 0, 0.07, 1),
 }
 
-.header{
+.header {
   top: 0;
   position: absolute;
   height: 50px;
@@ -163,8 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 @media screen and (min-width:1000px) {
-    .header-down {
-        width: 1000px;
-    }
+  .header-down {
+    width: 1000px;
+  }
 }
 </style>

@@ -1,0 +1,3 @@
+- 使用 `function` 来优化 `main.js` 体积。
+- 更新样式。
+- TBA
