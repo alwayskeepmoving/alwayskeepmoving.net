@@ -42,6 +42,7 @@
 
         /* 全局特效，不影响.headertop */
         .globalfx {
+            background-color: rgba(20, 20, 20, 0.4);
             width: 100%;
             height: 100%;
             background-size: cover;
@@ -200,23 +201,6 @@
             z-index: 3;
         }
 
-        /* 圆角矩形，用来当第二个顶栏右侧按钮 */
-        .yjjx {
-            margin-right: 20px;
-            width: 50px;
-            height: 20px;
-            background-color: rgb(28, 81, 255);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: rgb(255, 255, 255);
-            transition: all 0.15s ease-in-out;
-            user-select: none;
-            z-index: 3;
-        }
-
         /* 分享按钮 */
         .share {
             margin-right: 20px;
@@ -241,11 +225,6 @@
             color: rgb(28, 81, 255);
         }
 
-        /* 按下圆角矩形的效果 */
-        .yjjx:active {
-            background-color: rgb(255, 255, 255);
-            color: rgb(28, 81, 255);
-        }
 
         /* 汉堡菜单绝对定位容器 */
         .hbgcontainer {

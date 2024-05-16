@@ -7,7 +7,7 @@
           <span class="chevron-left"></span>
           <span class="chevron-right"></span>
         </div>
-        <div class="yjjx">详情</div>
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 .chevron {
   margin-top: 0;
   margin-left: auto;
-  width: 40px;
+  width: 60px;
   height: 100%;
   display: block;
   position: relative;

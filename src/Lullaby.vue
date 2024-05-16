@@ -1,9 +1,12 @@
 <template>
     <DownFxBox />
-    <HeaderDownBox title="照片墙"/>
+    <HeaderDownBox title="SP: Lullaby">
+        <DetailsButton detailsname="入手"/>
+    </HeaderDownBox>
+    <DetailsBox />
     <MainBackground>
         <InstBackground>
-            <InstView />
+            <div style="height: 1000px; width: auto; background-color: aliceblue;"></div>
         </InstBackground>
     </MainBackground>
     
@@ -17,7 +20,7 @@
     import HeaderDOM from './components/HeaderDOM.vue';
     import MainBackground from './components/MainBackground.vue';
     import InstBackground from './components/InstBackground.vue';
-    import InstView from './components/inst/InstView.vue';
+    import DetailsButton from './components/DetailsButton.vue';
 </script>
 
 <style scoped></style>

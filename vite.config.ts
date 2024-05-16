@@ -18,6 +18,7 @@ export default defineConfig({
       input: {
         index: './index.html',
         inst: './inst/index.html',
+        lullaby: './sp/lullaby/index.html',
       }
     }
   }

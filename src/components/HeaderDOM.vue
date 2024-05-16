@@ -1,6 +1,6 @@
 <template>
     <div class="globalfx"></div>
-    <div class="globalfx-down"></div>
+    <div id="globalfx-down" class="globalfx-down"></div>
     <div class="top-fxbox" id="topFxBox">
         <div class="top-fx">
             <HeaderLink text="首页" :link="links.home_link" />

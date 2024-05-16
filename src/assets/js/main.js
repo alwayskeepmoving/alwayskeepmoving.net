@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let hamburger = document.querySelector('.hamburger');
     const body = document.querySelector('body');
     const shop = document.querySelector('.shop');
-    const yjjx = document.querySelector('.yjjx');
+    const detailsbtn = document.querySelector('.detailsbtn');
     const shopfx = document.querySelector('.shopfx');
     const shopMenu = document.querySelector('.shopmenubox');
     const downfx = document.querySelector('.downfxbox');
@@ -204,28 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 监听.yjjx元素的点击事件
-    if (yjjx) {
-        yjjx.addEventListener('click', () => {
-            // 切换.headerdown元素的高度，以及按钮特效蒙版的透明度
-            if (isExpanded) {
-                downfx.style.height = '0';
-                changeBlur('0');
-                globalfxdown.style.opacity = '0';
-                body.style.overflow = 'auto';
-
-            } else {
-                downfx.style.height = '400px';
-                changeBlur('20px');
-                globalfxdown.style.opacity = '100%';
-                body.style.overflow = 'hidden';
-            }
-
-            // 更新标记变量的值
-            isExpanded = !isExpanded
-        });
-    }
-
     // 获取分享按钮
     const sr = document.querySelectorAll('.share')[0];
     // 添加单击事件监听器
@@ -251,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // cookies
-    var privateLink = document.getElementById("privateLink");
+    const privateLink = document.getElementById("privateLink");
     if (privateLink) {
         privateLink.addEventListener("click", function () {
             this.innerHTML = "(ᗜˬᗜ)";
