@@ -15,7 +15,7 @@
                 我知道你很急，但是你先别急（
             </h3>
             <p class="text">
-                什么风把您吹到这儿了？这个网站还在搭建和测试中。在其他页面构建完成之前，你可以先行浏览我们的<a href="./inst/">照片墙</a>。
+                什么风把您吹到这儿了？这个网站还在搭建和测试中。在其他页面构建完成之前，你可以先行浏览我们的<a href="https://www.alwayskeepmoving.net/inst/">照片墙</a>。
             </p>
         </div>
 
@@ -29,7 +29,8 @@
     margin: 0;
     padding: 0;
 }
-.coding{
+
+.coding {
     background-color: rgb(10, 10, 10);
 }
 

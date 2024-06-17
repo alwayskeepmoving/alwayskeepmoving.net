@@ -13,6 +13,58 @@
         </div>
 
         <div class="insimage">
+            <img :src="postImg.abyss_post" alt="用于宣传 “Sounds Of Future Project: Abyssal Sea” 的海报。">
+        </div>
+
+        <InstBar />
+
+        <div class="insinfo">
+            <div class="text">
+                CALL FOR ENTRIES.<br>
+                <br>
+                SP: Abyssal Sea「淵海」如期而至。<br>
+                <br>
+                作为 Sounds of Future Project 的下篇乐章，「淵海」的故事也以束装就道。<br>
+                <br>
+                征收主题：Abyssal Sea「淵海」<br>
+                <br>
+                起初我们认为「淵海」应是一张带有暗色氛围或具有特别色彩的专辑：类如 Bass 音乐，Dark Ambient 等曲风。<br>
+                <br>
+                但上述说的曲类并不一定是我们所征收的，而是作为参考。与「搖籃曲」相同，我们不会对作曲风格有任何的限制，更希望征收对『Abyssal Sea「淵海」』具有独特理解的曲目，以续写未来之声的下一篇章。
+                <br>
+                投稿邮箱：sof@alwayskeepmoving.net<br>
+                <br>
+                截止日期：9 月 10 日（星期二）<br>
+                <br>
+                投稿须知：<br>
+                <br>
+                我们将在 7 天内审核并回复你的作品。为了效率起见，邮箱主题请使用类如 <歌曲名> - <歌手名> 的样式，并附上 50 MB 以内的任意常见音频格式。<br>
+                        <br>
+                        ＊我们将直接拒绝此类稿件的审核及回复：<br>
+                        <br>
+                        　完全由 AI 生成 Vocal 的歌曲。<br>
+                        <br>
+                        　具有 AI 痕迹的器乐曲。<br>
+                        <br>
+                        今后也请多多支持。<br>
+                        <br>
+                        <post />
+            </div>
+        </div>
+        <div class="ins-symbol"></div>
+        <div class="instagram">
+            <div class="profile">
+                <img :src="avatar.akm" alt="AlwaysKeepMoving" id="profile">
+            </div>
+
+            <div class="username">
+                AlwaysKeepMoving
+            </div>
+
+            <More />
+        </div>
+
+        <div class="insimage">
             <img :src="postImg.lullaby_on_air" alt="用于宣传 “Sounds Of Future Project: Lullaby” 的海报。">
         </div>
 
@@ -124,6 +176,7 @@ const avatar = {
 const postImg = {
     lullaby_post: "/inst/img/lullaby/post.jpg",
     lullaby_on_air: "/inst/img/lullaby/on_air.jpg",
+    abyss_post: "/inst/img/abyss/post.png",
     Hello: "https://www.dmoe.cc/random.php",
 };
 </script>
