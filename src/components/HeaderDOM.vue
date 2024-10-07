@@ -42,7 +42,7 @@ function toggleBlurFx() {
 
 const RouterLinks = {
     '主页': '/',
-    '照片墙': '/inst/',
+    '照片墙': '/inst',
     // '故事线': '/story',
     // '作品集': '/works',
     // '关于我们': '/about',

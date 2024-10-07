@@ -1,11 +1,13 @@
 <template>
-    <DownFxBox />
-    <MainBackground>
-        <InstBackground>
-            <Coding />
-        </InstBackground>
-    </MainBackground>
-    <HeaderDOM />
+    <div>
+        <DownFxBox />
+        <MainBackground>
+            <InstBackground>
+                <Coding />
+            </InstBackground>
+        </MainBackground>
+        <HeaderDOM />
+    </div>
 </template>
 
 <script setup lang="ts">

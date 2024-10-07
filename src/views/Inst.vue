@@ -1,13 +1,15 @@
 <template>
-    <DownFxBox />
-    <HeaderDownBox title="照片墙" />
-    <MainBackground>
-        <InstBackground>
-            <InstView />
-        </InstBackground>
-    </MainBackground>
+    <div>
+        <DownFxBox />
+        <HeaderDownBox title="照片墙" />
+        <MainBackground>
+            <InstBackground>
+                <InstView />
+            </InstBackground>
+        </MainBackground>
 
-    <HeaderDOM />
+        <HeaderDOM />
+    </div>
 </template>
 
 <script setup lang="ts">
