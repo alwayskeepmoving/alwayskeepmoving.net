@@ -13,13 +13,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  build: {
-    rollupOptions: {
-      input: {
-        index: './index.html',
-        inst: './inst/index.html',
-        lullaby: './sp/lullaby/index.html',
-      }
-    }
-  }
 })

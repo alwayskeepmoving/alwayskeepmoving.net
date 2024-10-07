@@ -1,73 +1,279 @@
 <template>
     <div class="insbar">
-        <div class="like">
-            <svg aria-label="赞" fill="rgb(255, 255, 255)" height="24" role="img" viewBox="0 0 24 24" width="24">
-                <path
-                    d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938m0-2a6.04 6.04 0 0 0-4.797 2.127 6.052 6.052 0 0 0-4.787-2.127A6.985 6.985 0 0 0 .5 9.122c0 3.61 2.55 5.827 5.015 7.97.283.246.569.494.853.747l1.027.918a44.998 44.998 0 0 0 3.518 3.018 2 2 0 0 0 2.174 0 45.263 45.263 0 0 0 3.626-3.115l.922-.824c.293-.26.59-.519.885-.774 2.334-2.025 4.98-4.32 4.98-7.94a6.985 6.985 0 0 0-6.708-7.218Z">
-                </path>
-            </svg>
+        <!-- 点赞功能 -->
+        <div class="like" :class="{ active: isLiked }" @click="toggleLike">
+            <Like />
+        </div>
+        <div class="liked" :class="{ active: isLiked }" @click="toggleLike">
+            <Liked />
         </div>
 
-        <div class="liked">
-            <svg aria-label="取消赞" color="rgb(255, 48, 64)" fill="rgb(255, 48, 64)" height="24" role="img"
-                viewBox="0 0 48 48" width="24">
-                <path
-                    d="M34.6 3.1c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5s1.1-.2 1.6-.5c1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
-                </path>
-            </svg>
-        </div>
         <div class="cmtrbq">
-            <div class="comment">
-                <svg aria-label="评论" color="rgb(255, 255, 255)" height="24" role="img" viewBox="0 0 24 24" width="24">
-                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="none" stroke="currentColor"
-                        stroke-linejoin="round" stroke-width="2"></path>
-                </svg>
+            <div class="comment" :class="{ active: isCommented }" @click="toggleComment">
+                <Comment />
             </div>
-
-            <div class="commented">
-                <svg aria-label="评论" color="rgb(48, 51, 255)" fill="rgb(48, 51, 255)" height="24" role="img"
-                    viewBox="0 0 24 24" width="24">
-                    <path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" fill="rgb(48, 51, 255)"
-                        stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
-                </svg>
+            <div class="commented" :class="{ active: isCommented }" @click="toggleComment">
+                <Commented />
             </div>
         </div>
+
         <div class="sharerbq">
-            <div class="fenxiang">
-                <svg aria-label="分享" width="24" height="24" viewBox="0 0 48 48" fill="rgb(0, 0, 0)">
-                    <path d="M26 4L44 22L26 39V28C12 28 6 43 6 43C6 26 11 15 26 15V4Z" fill="none"
-                        stroke="rgb(255, 255, 255)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <div class="fenxiang" :class="{ active: isShared }" @click="shareContent">
+                <Share />
             </div>
-            <div class="fenxianged">
-                <svg aria-label="取消分享" width="24" height="24" viewBox="0 0 48 48" fill="rgb(0, 0, 0)">
-                    <path d="M26 4L44 22L26 39V28C12 28 6 43 6 43C6 26 11 15 26 15V4Z" fill="rgb(255, 48, 127)"
-                        stroke="rgb(255, 48, 127)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <div class="fenxianged" :class="{ active: isShared }" @click="shareContent">
+                <Shared />
             </div>
         </div>
-        <div class="rbq">
-            <div class="star">
-                <svg aria-label="收藏" width="24" height="24" viewBox="0 0 48 48" fill="rgb(0, 0, 0)">
-                    <path
-                        d="M23.9986 5L17.8856 17.4776L4 19.4911L14.0589 29.3251L11.6544 43L23.9986 36.4192L36.3454 43L33.9586 29.3251L44 19.4911L30.1913 17.4776L23.9986 5Z"
-                        fill="none" stroke="rgb(255, 255, 255)" stroke-width="4" stroke-linejoin="round" />
-                </svg>
-            </div>
 
-            <div class="stared">
-                <svg aria-label="收藏" width="24" height="24" viewBox="0 0 48 48" fill="rgb(0, 0, 0)">
-                    <path
-                        d="M23.9986 5L17.8856 17.4776L4 19.4911L14.0589 29.3251L11.6544 43L23.9986 36.4192L36.3454 43L33.9586 29.3251L44 19.4911L30.1913 17.4776L23.9986 5Z"
-                        fill="rgb(255, 221, 48)" stroke="rgb(255, 221, 48)" stroke-width="4" stroke-linejoin="round" />
-                </svg>
+        <div class="rbq">
+            <div class="star" :class="{ active: isStared }" @click="toggleStar">
+                <Star />
+            </div>
+            <div class="stared" :class="{ active: isStared }" @click="toggleStar">
+                <Stared />
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import Share from './icons/inst/Share.vue'
+import Shared from './icons/inst/Shared.vue'
+import Like from './icons/inst/Like.vue'
+import Liked from './icons/inst/Liked.vue'
+import Comment from './icons/inst/Comment.vue'
+import Commented from './icons/inst/Commented.vue'
+import Star from './icons/inst/Star.vue'
+import Stared from './icons/inst/Stared.vue'
 
+// 定义状态
+const isLiked = ref(false)
+const isCommented = ref(false)
+const isShared = ref(false)
+const isStared = ref(false)
+
+// 点赞功能
+const toggleLike = () => {
+    isLiked.value = !isLiked.value
+}
+
+// 评论功能
+const toggleComment = () => {
+    isCommented.value = !isCommented.value
+}
+
+// 分享功能
+const shareContent = async () => {
+    try {
+        await navigator.share({
+            title: '照片墙',
+            text: '分享!',
+            url: 'https://www.alwayskeepmoving.net',
+        })
+        isShared.value = true
+        setTimeout(() => {
+            isShared.value = false
+        }, 500)
+    } catch (error) {
+        // console.log('分享失败', error)
+        alert(error)
+    }
+}
+
+// 收藏功能
+const toggleStar = () => {
+    isStared.value = !isStared.value
+}
 </script>
 
-<style scoped></style>
+
+<style>
+.insbar {
+    display: flex;
+    height: 50px;
+    background-color: rgb(20, 20, 20);
+    align-items: center;
+}
+
+.insbar .like {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -4px;
+    position: relative;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .like.active {
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(0.7);
+    transform-origin: center center;
+}
+
+.insbar .liked {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -4px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.insbar .liked.active {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+.insbar .cmtrbq {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    justify-content: center;
+    margin-right: -4px;
+    align-items: center;
+}
+
+.insbar .comment {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .comment.active {
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.insbar .commented {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .commented.active {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+.insbar .sharerbq {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    justify-content: center;
+    margin-right: -4px;
+}
+
+.insbar .fenxiang {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .fenxiang.active {
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.insbar .fenxianged {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0.9);
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .fenxianged.active {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(1);
+    transform-origin: center center;
+}
+
+
+.insbar .rbq {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.insbar .star {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    position: absolute;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .star.active {
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(0.9);
+    transform-origin: center center;
+}
+
+.insbar .stared {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transform: scale(0.9);
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.insbar .stared.active {
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.82, 0, 0.58, 1);
+    transform: scale(1);
+    transform-origin: center center;
+}
+</style>

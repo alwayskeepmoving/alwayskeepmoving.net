@@ -33,7 +33,7 @@
                         <h1>友情链接</h1>
                         <h2><a href="https://www.dizzylab.net/">Dizzylab</a></h2>
                         <h2><a href="https://www.akmeow.top">akmeow 阿卡喵</a></h2>
-                        <h2><a href="https://www.polarissmusic.cn">CryolysiS 冷分解</a></h2>
+                        <h2><a href="https://www.polarissdesu.cn">CryolysiS 冷分解</a></h2>
                     </div>
                     <div class="footer-info">
                         <h1>取得联系</h1>
@@ -55,7 +55,7 @@
                         <a :href="sociallinks.bilibili"><img class="footer-logo" src="/img/social/bilibili.svg"
                                 title="在 BiliBili 上关注我们"></a>
                     </div>
-                    
+
                     <div>
                         <a :href="sociallinks.beatport_link"><img class="footer-logo" src="/img/social/beatport.svg"
                                 title="在 Beatport 上关注我们"></a>
@@ -76,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import NavigationBar from './NavigationBar.vue';
 const sociallinks = {
     bilibili: "https://space.bilibili.com/2119054500",
@@ -89,6 +90,32 @@ const sociallinks = {
 }
 
 const status = "All Systems Normal";
+function EastEgg() {
+    // cookies
+    const cookiesLink = document.getElementById("cookies");
+    if (cookiesLink) {
+        cookiesLink.addEventListener("click", function () {
+            this.innerHTML = "🍪🍪";
+            setTimeout(() => {
+                this.innerHTML = "Cookies";
+            }, 1000);
+        });
+    }
+
+    const privateLink = document.getElementById("privateLink");
+    if (privateLink) {
+        privateLink.addEventListener("click", function () {
+            this.innerHTML = "(ᗜˬᗜ)";
+            setTimeout(() => {
+                this.innerHTML = "隐私政策";
+            }, 1000);
+        });
+    }
+}
+
+onMounted(() => {
+    EastEgg();
+})
 </script>
 
 <style scoped>
@@ -194,7 +221,7 @@ const status = "All Systems Normal";
     display: flex;
     width: auto;
     height: 30px;
-    
+
     margin-left: 20px;
     margin-right: auto;
     align-items: center;
@@ -263,7 +290,7 @@ const status = "All Systems Normal";
         display: flex;
     }
 
-    .status{
+    .status {
         display: flex;
     }
 }

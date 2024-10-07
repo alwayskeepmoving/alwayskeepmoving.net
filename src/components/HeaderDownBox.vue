@@ -36,14 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isExpanded) {
         headerDownbox.style.height = '50px';
         globalfxdown.style.opacity = '0';
-        changeBlur('0');
         body.style.overflow = 'auto';
         chevron.classList.remove('chevron-tobe');
 
       } else {
         headerDownbox.style.height = '200px';
         globalfxdown.style.opacity = '100%';
-        changeBlur('20px');
         body.style.overflow = 'hidden';
         chevron.classList.toggle('chevron-tobe');
       }

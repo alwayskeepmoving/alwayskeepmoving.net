@@ -3,19 +3,9 @@
         <div class="navigation-bar">
             <Logo class="logo" />
             <NavArrow class="arrow" />
-            <a :href="links.home" class="white underline text">主页</a>
+            <RouterLink to="/" class="white underline text">主页</RouterLink>
             <NavArrow class="arrow" />
-            <a :href="links.inst" class="white underline text">照片墙</a>
-        </div>
-    </div>
-
-    <div v-if="isSpLullaby">
-        <div class="navigation-bar">
-            <Logo class="logo" />
-            <NavArrow class="arrow" />
-            <a :href="links.home" class="white underline text">Sounds of Future</a>
-            <NavArrow class="arrow" />
-            <a :href="links.splullaby" class="white underline text">SP: Lullaby</a>
+            <RouterLink to="/inst" class="white underline text">照片墙</RouterLink>
         </div>
     </div>
 
@@ -27,19 +17,16 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from 'vue-router';
 import Logo from './icons/Logo.vue';
 import NavArrow from './icons/NavArrow.vue';
 
-const isInstPage = window.location.pathname === '/inst/'
-const isHomePage = window.location.pathname === '/'
-const isSpLullaby = window.location.pathname === '/sp/lullaby/'
+const route = useRoute();
 
-const links = {
-    home: "https://www.alwayskeepmoving.net/",
-    inst: "https://www.alwayskeepmoving.net/inst/",
-    splullaby: "https://www.alwayskeepmoving.net/sp/lullaby/"
-}
+const isHomePage = route.path === '/';
+const isInstPage = route.path === '/inst';
 </script>
+
 
 <style scoped>
 .navigation-bar {

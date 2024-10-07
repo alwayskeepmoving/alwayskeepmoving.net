@@ -1,35 +1,19 @@
 <template>
-    <div class="globalfx"></div>
+    <div class="globalfx" :style="{ opacity: isBlured ? '1' : '0' }"></div>
     <div id="globalfx-down" class="globalfx-down"></div>
     <div class="top-fxbox" id="topFxBox">
         <div class="top-fx">
-            <HeaderLink text="首页" :link="links.home_link" />
-            <HeaderLink text="照片墙" :link="links.inst_link" />
-            <HeaderLink text="故事线" link="" />
-            <HeaderLink text="作品集" link="" />
-            <HeaderLink text="关于我们" link="" />
-            <HeaderLink text="取得联系" link="" />
-            <!-- <div class="header-fx"><a class="white underline">Complex Dream</a></div>
-            <div class="header-fx"><a class="white underline">Amusement Park</a></div>
-            <div class="header-fx"><a class="white underline">Sounds Of Future</a></div> -->
+            <HeaderRouter v-for="( Routerlink, text ) in RouterLinks" :text="text" :to="Routerlink" />
         </div>
     </div>
     <div class="shopmenubox" id="shopBox">
         <div class="shopmenu">
-            <!-- <div class="shopmenu-fx"><a class="white underline" :href="links.soundcloud_link">在 SoundCloud 上试听</a></div>
-            <div class="shopmenu-fx"><a class="white underline" :href="links.dizzylab_link">在 Dizzylab 上购买</a></div>
-            <div class="shopmenu-fx"><a class="white underline" :href="links.beatport_link">在 Beatport 上购买</a></div>
-            <div class="shopmenu-fx"><a class="white underline" href="">在 Qobuz 上购买</a></div>
-            <div class="shopmenu-fx"><a class="white underline" href="">在 Juno 上购买</a></div> -->
-            <HeaderLink text="前往 akmeow 阿卡喵↗" link="" />
-            <HeaderLink text="前往 Beatport↗" :link="links.beatport_link" />
-            <HeaderLink text="前往 Dizzylab↗" :link="links.dizzylab_link" />
-            <HeaderLink text="前往 SoundCloud↗" :link="links.soundcloud_link" />
+            <HeaderLink v-for="( SocialLink, text ) in SocialLinks" :text="text" :link="SocialLink" />
         </div>
     </div>
-    <div class="header-topbox" id="navBar">
+    <div class="header-topbox" :id="HeaderID">
         <div class="header-top">
-            <div class="hbgcontainer">
+            <div class="hbgcontainer" @click="toggleBlurFx()">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -46,39 +30,136 @@
 
 <script setup lang="ts">
 // @ts-nocheck
-import Arrow from './icons/Arrow.vue';
+import { ref, computed, onMounted } from 'vue';
 import HeaderLink from './HeaderLink.vue';
+import HeaderRouter from './HeaderRouter.vue';
 
-const links = {
-    home_link: "https://www.alwayskeepmoving.net",
-    inst_link: "https://www.alwayskeepmoving.net/inst/",
-    story_link: "https://www.alwayskeepmoving.net/story",
-    works_link: "https://www.alwayskeepmoving.net/works",
-    about_link: "https://www.alwayskeepmoving.net/about",
-    contact_link: "https://www.alwayskeepmoving.net/contact",
-    soundcloud_link: "https://soundcloud.com/alwayskeepmoving",
-    dizzylab_link: "https://www.dizzylab.net/l/AlwaysKeepMoving/",
-    beatport_link: "https://www.beatport.com/label/alwayskeepmoving-records/102961"
+const isBlured = ref(false);
+
+function toggleBlurFx() {
+    isBlured.value = !isBlured.value;
+}
+
+const RouterLinks = {
+    '主页': '/',
+    '照片墙': '/inst/',
+    // '故事线': '/story',
+    // '作品集': '/works',
+    // '关于我们': '/about',
+    // '取得联系': '/contact',
+    '故事线': '/',
+    '作品集': '/',
+    '关于我们': '/',
+    '取得联系': '/',
+}
+
+const SocialLinks = {
+    '前往 akmeow 阿卡喵↗': 'https://akmeow.com',
+    '前往 Beatport↗': 'https://www.beatport.com/label/alwayskeepmoving-records/102961',
+    '前往 Dizzylab↗': 'https://www.dizzylab.net/l/AlwaysKeepMoving/',
+    '前往 SoundCloud↗': 'https://soundcloud.com/alwayskeepmoving',
 };
 
-var prevScrollpos = window.scrollY;
-window.addEventListener('scroll', function () {
-    var currentScrollPos = window.scrollY;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navBar").style.top = "0";
-        document.getElementById("shopBox").style.top = "0";
-        document.getElementById("topFxBox").style.top = "0";
-        document.getElementById("headerDownBox").style.top = "50px";
-    } else {
-        document.getElementById("navBar").style.top = "-50px";
-        document.getElementById("shopBox").style.top = "-50px";
-        document.getElementById("topFxBox").style.top = "-50px";
-        document.getElementById("headerDownBox").style.top = "0";
+const prevScrollpos = ref(window.scrollY);
 
+const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    const navBar = document.getElementById('navBar');
+    const shopBox = document.getElementById('shopBox');
+    const topFxBox = document.getElementById('topFxBox');
+    const headerDownBox = document.getElementById('headerDownBox');
+
+    if (navBar && shopBox && topFxBox && headerDownBox) {
+        if (prevScrollpos.value > currentScrollPos) {
+            navBar.style.top = '0';
+            shopBox.style.top = '0';
+            topFxBox.style.top = '0';
+            headerDownBox.style.top = '50px';
+        } else {
+            navBar.style.top = '-50px';
+            shopBox.style.top = '-50px';
+            topFxBox.style.top = '-50px';
+            headerDownBox.style.top = '0';
+        }
     }
-    prevScrollpos = currentScrollPos;
-});
 
+    prevScrollpos.value = currentScrollPos;
+}
+
+window.addEventListener('scroll', handleScroll);
+
+const HeaderID = computed(() => window.location.pathname === '/' ? 'navBar-unflip' : 'navBar');
+
+onMounted(() => {
+    const topFx = document.querySelector('.top-fxbox');
+    const hamburger = document.querySelector('.hamburger');
+    const body = document.querySelector('body');
+    const shop = document.querySelector('.shop');
+    const shopfx = document.querySelector('.shopfx');
+    const shopMenu = document.querySelector('.shopmenubox');
+    const globalfx = document.querySelector('.globalfx');
+
+    let isShopfxExpanded = false;
+    let isExpanded = false;
+
+    const toggleShopMenu = () => {
+        if (isExpanded) {
+            shopMenu.style.height = '50px';
+            body.style.overflow = 'auto';
+            hamburger.style.opacity = '100%';
+            hamburger.classList.remove('noclick');
+        } else {
+            shopMenu.style.height = '100%';
+            body.style.overflow = 'hidden';
+            hamburger.style.opacity = '30%';
+            hamburger.classList.add('noclick');
+        }
+
+        isExpanded = !isExpanded;
+        isShopfxExpanded = !isShopfxExpanded;
+    }
+
+    shop?.addEventListener('click', toggleShopMenu);
+
+    const toggleHeaderFx = () => {
+        if (topFx.classList.contains('expanded')) {
+            topFx.style.height = '50px';
+            topFx.classList.remove('expanded', 'active');
+        } else {
+            topFx.style.height = '100%';
+            topFx.classList.add('expanded', 'active');
+        }
+    }
+
+    const toggleHamburgerMenu = () => {
+        const lines = document.querySelectorAll('.hamburger span');
+        if (hamburger.classList.contains('active')) {
+            lines[0].style.transform = 'none';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = 'none';
+            hamburger.classList.remove('active');
+            body.style.overflow = 'auto';
+        } else {
+            lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            lines[1].style.opacity = '0';
+            lines[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            hamburger.classList.add('active');
+            body.style.overflow = 'hidden';
+        }
+    }
+
+    hamburger?.addEventListener('click', toggleHeaderFx);
+    hamburger?.addEventListener('click', toggleHamburgerMenu);
+});
 </script>
 
-<style scoped></style>
+<style scoped>
+#navBar-unflip::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+</style>

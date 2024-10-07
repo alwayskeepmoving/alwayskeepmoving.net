@@ -32,6 +32,8 @@
                 <br>
                 但上述说的曲类并不一定是我们所征收的，而是作为参考。与「搖籃曲」相同，我们不会对作曲风格有任何的限制，更希望征收对『Abyssal Sea「淵海」』具有独特理解的曲目，以续写未来之声的下一篇章。
                 <br>
+                <br>
+
                 投稿邮箱：sof@alwayskeepmoving.net<br>
                 <br>
                 截止日期：9 月 10 日（星期二）<br>
@@ -170,13 +172,13 @@ import InstBar from '../InstBar.vue';
 import Post from '../Post.vue';
 import More from '../icons/More.vue';
 const avatar = {
-    akm: "/inst/img/profile/akm.jpg",
-    gbxin: "/inst/img/profile/gbxin.webp",
+    akm: "/img/inst/profile/akm.jpg",
+    gbxin: "/img/inst/profile/gbxin.webp",
 };
 const postImg = {
-    lullaby_post: "/inst/img/lullaby/post.jpg",
-    lullaby_on_air: "/inst/img/lullaby/on_air.jpg",
-    abyss_post: "/inst/img/abyss/post.png",
+    lullaby_post: "/img/inst/lullaby/post.jpg",
+    lullaby_on_air: "/img/inst/lullaby/on_air.jpg",
+    abyss_post: "/img/inst/abyss/post.png",
     Hello: "https://www.dmoe.cc/random.php",
 };
 </script>

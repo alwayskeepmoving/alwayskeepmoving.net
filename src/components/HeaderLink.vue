@@ -1,7 +1,7 @@
 <template>
   <a class="header-fx white underline" :href="link">
     <p class="text">{{ text }}</p>
-    <solt></solt>
+    <slot></slot>
     <Arrow />
   </a>
 </template>
@@ -10,7 +10,6 @@
 import Arrow from './icons/Arrow.vue';
 
 defineProps({
-
   text: {
     type: String,
     required: true
