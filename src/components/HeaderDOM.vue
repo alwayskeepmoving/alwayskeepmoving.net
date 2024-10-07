@@ -98,7 +98,8 @@ onMounted(() => {
     const shopfx = document.querySelector('.shopfx');
     const shopMenu = document.querySelector('.shopmenubox');
     const globalfx = document.querySelector('.globalfx');
-
+    // 修复在页面加载时无法正常操作的问题
+    body.style.overflow = 'auto';
     let isShopfxExpanded = false;
     let isExpanded = false;
 

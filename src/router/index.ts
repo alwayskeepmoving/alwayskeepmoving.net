@@ -13,9 +13,9 @@ const router = createRouter({
             component: HomeView,
             meta: {
                 title: MainTitle + '首页',
-                ogTitle: MainTitle + '照片墙',
+                ogTitle: MainTitle + '首页',
                 ogDescription: '欢迎来到 AlwaysKeepMoving，探索我们的最新发行与近期动态。',
-                ogImage: '/img/og-image/main.jpg'
+                ogImage: 'http://alwayskeepmoving.net/img/og-image/og.jpg'
             }
         },
         {
@@ -26,7 +26,7 @@ const router = createRouter({
                 title: MainTitle + '照片墙',
                 ogTitle: MainTitle + '照片墙',
                 ogDescription: '探索我们的近期动态。',
-                ogImage: '/img/og-image/main.jpg'
+                ogImage: 'http://alwayskeepmoving.net/img/og-image/og.jpg'
             }
         }
     ]

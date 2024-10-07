@@ -3,13 +3,8 @@
         <transition name="scale" mode="out-in">
             <component :is="Component" :key="$route.path" />
         </transition>
-
     </router-view>
 </template>
-
-<script>
-import HeaderDOM from './components/HeaderDOM.vue';
-</script>
 
 <style scoped>
 .scale-enter-active,
