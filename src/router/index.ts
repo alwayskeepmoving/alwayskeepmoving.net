@@ -32,28 +32,8 @@ const router = createRouter({
     ]
 });
 
-const OGProperties = (metaData: any) => {
-    const updateMetaTag = (property: string, content: string) => {
-        let element = document.querySelector(`meta[property='${property}']`);
-        if (!element) {
-            element = document.createElement('meta');
-            element.setAttribute('property', property);
-            document.head.appendChild(element);
-        }
-        element.setAttribute('content', content);
-    };
-
-    if (metaData) {
-        updateMetaTag('og:title', metaData.ogTitle || '');
-        updateMetaTag('og:description', metaData.ogDescription || '');
-        updateMetaTag('og:image', metaData.ogImage || '');
-    }
-};
-
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title as string;
-    // Call OGProperties to update meta tags
-    OGProperties(to.meta);
     next();
 });
 

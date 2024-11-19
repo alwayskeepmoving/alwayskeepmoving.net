@@ -3,7 +3,7 @@
         <div class="navigation-bar">
             <Logo class="logo" />
             <NavArrow class="arrow" />
-            <RouterLink to="/" class="white underline text">主页</RouterLink>
+            <RouterLink to="/" class="white underline text">首页</RouterLink>
             <NavArrow class="arrow" />
             <RouterLink to="/inst" class="white underline text">照片墙</RouterLink>
         </div>

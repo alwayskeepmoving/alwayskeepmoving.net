@@ -168,13 +168,18 @@
 </template>
 
 <script setup lang="ts">
+function getQQAvatar(QNumber: string) {
+    return `https://q.qlogo.cn/headimg_dl?dst_uin=${QNumber}&spec=640&img_type=jpg`;
+}
+
 import InstBar from '../InstBar.vue';
 import Post from '../Post.vue';
 import More from '../icons/More.vue';
 const avatar = {
     akm: "/img/inst/profile/akm.jpg",
-    gbxin: "/img/inst/profile/gbxin.webp",
+    gbxin: getQQAvatar("3207905831"),
 };
+
 const postImg = {
     lullaby_post: "/img/inst/lullaby/post.jpg",
     lullaby_on_air: "/img/inst/lullaby/on_air.jpg",
