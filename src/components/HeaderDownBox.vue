@@ -13,7 +13,9 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="js">
+import { onMounted } from 'vue';
+
 // @ts-nocheck
 defineProps({
   title: {
@@ -21,11 +23,11 @@ defineProps({
     required: true
   }
 })
-
-document.addEventListener("DOMContentLoaded", function () {
+onMounted(() => {
   function changeBlur(value) {
     document.documentElement.style.setProperty("--initblur", value);
   }
+
   let isExpanded = false;
   const body = document.querySelector('body');
   const globalfxdown = document.querySelector('.globalfx-down');
@@ -47,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       // 更新标记变量的值
       isExpanded = !isExpanded
-
     });
   }
-});
+})
+
 </script>
 
 <style scoped>
