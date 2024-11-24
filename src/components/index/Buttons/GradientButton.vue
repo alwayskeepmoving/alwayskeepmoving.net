@@ -4,7 +4,7 @@
     </button>
 </template>
 
-<script setup>
+<script setup lang="js">
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import chroma from 'chroma-js';

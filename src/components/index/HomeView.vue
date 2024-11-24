@@ -14,6 +14,8 @@
                 <GradientButton text="投递稿件" />
                 <Button text="取得联系" />
             </div>
+
+            <!-- <Cover /> -->
         </section>
     </main>
 </template>
@@ -21,62 +23,21 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 // @ts-ignore
-import Button from '../Button.vue';
+import Button from './Buttons/Button.vue';
 // @ts-ignore
-import GradientButton from '../GradientButton.vue';
+import GradientButton from './Buttons/GradientButton.vue';
+import Cover from './Cover.vue';
 
 const HERO = ref({
     slogan: 'We Meticulously Create',
     love: 'Doujin Music',
 })
 
-// const words = ["Doujin Music", "Visual Design", "Open Source"]
-
-// const text = ref<HTMLElement | null>(null);
-// const slogan = ref<HTMLElement | null>(null);
-
-// let wordIndex = 0;
-// let charIndex = 0;
-// let isDelete = false;
-// let delay = 500;
-// let defaultDelayTime = 100;
-// let waitDelayTime = 2000;
-
-// const updateText = () => {
-//     if (text.value) {
-//         text.value.textContent = words[wordIndex].substring(0, charIndex);
-//     }
-
-//     if (!isDelete) {
-//         delay = defaultDelayTime;
-//         charIndex++;
-
-//         if (charIndex - 1 === words[wordIndex].length) {
-//             delay = waitDelayTime;
-//             isDelete = true;
-//         }
-//     } else if (isDelete) {
-//         delay = defaultDelayTime;
-//         charIndex--;
-
-//         if (charIndex < 1) {
-//             isDelete = false;
-//             wordIndex++;
-//             if (wordIndex >= words.length) {
-//                 wordIndex = 0;
-//             }
-//         }
-//     }
-//     setTimeout(updateText, delay);
-// }
-
 onMounted(() => {
     const line = document.getElementById('navBar-unflip');
     if (line) {
         line.style.setProperty("--op", "0");
     }
-
-    // updateText();
 })
 </script>
 
@@ -111,6 +72,7 @@ h2 {
     letter-spacing: -2px;
     text-align: center;
     z-index: 1;
+    margin: 0 40px 0 40px;
 }
 
 .halo-white {
@@ -129,7 +91,7 @@ h2 {
 }
 
 .halo::after {
-    content: 'marvellous';
+    content: 'DoujinMusic';
     font-size: 50px;
     color: rgb(128, 0, 255);
     position: absolute;
@@ -141,7 +103,7 @@ h2 {
 }
 
 .halo::after {
-    content: 'marvellous';
+    content: 'DoujinMusic';
     font-size: 64px;
     color: rgb(128, 0, 255);
     position: absolute;
@@ -153,14 +115,19 @@ h2 {
 }
 
 @keyframes linearop {
-    from {
+    0% {
         opacity: 1;
     }
 
-    to {
+    50% {
         opacity: 0;
     }
+
+    100% {
+        opacity: 1;
+    }
 }
+
 
 .typer-container {
     display: flex;
@@ -173,6 +140,7 @@ h2 {
     display: inline-block;
     height: 54px;
     width: 2px;
+    margin-left: 4px;
     animation: linearop 1s ease-in-out infinite;
 }
 

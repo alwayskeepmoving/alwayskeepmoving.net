@@ -15,13 +15,14 @@ defineProps({
 
 <style scoped>
 .button {
-    --button-background: #0d0629b7;
+    --button-background: #160d39b7;
     --button-color: #fff;
     --button-shadow: rgba(33, 4, 104, 0.2);
     --button-shine-left: rgba(120, 0, 245, 0.5);
     --button-shine-right: rgba(200, 148, 255, 0.65);
     --button-glow-start: #b000e8;
     --button-glow-end: #009ffd;
+    user-select: none;
     appearance: none;
     outline: none;
     border: none;
@@ -39,6 +40,7 @@ defineProps({
     background: none;
     z-index: 1;
     box-shadow: 0 8px 20px var(--button-shadow);
+    transform: all 1s ease-in-out;
 }
 
 .button .gradient {
@@ -75,8 +77,22 @@ defineProps({
     border-radius: inherit;
     background-color: var(--button-background);
     overflow: hidden;
-    border: #524485 1px solid;
+    border: #372c65 1px solid;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     mask-image: -webkit-radial-gradient(white, black);
+    transition: all .3s ease-in-out;
+}
+
+.button span:active {
+    background-color: #372c65;
+    transition: all .1s ease-in-out;
+}
+
+
+@media (any-hover: hover) {
+    .button span:hover {
+        background-color: #372c65;
+        transition: all .2s ease-in-out;
+    }
 }
 </style>
