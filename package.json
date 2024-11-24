@@ -19,7 +19,11 @@
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/tsconfig": "^0.5.1",
+    "chroma": "^0.0.1",
+    "chroma-js": "^3.1.2",
+    "gsap": "^3.12.5",
     "npm-run-all2": "^6.1.2",
+    "sass-embedded": "^1.81.0",
     "typescript": "~5.4.0",
     "vite": "^5.2.8",
     "vue-tsc": "^2.0.11"

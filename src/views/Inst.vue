@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import DetailsBox from '@/components/DetailsBox.vue';
 import DownFxBox from '@/components/DownFxBox.vue'
+// @ts-ignore
 import HeaderDownBox from '@/components/HeaderDownBox.vue';
 import HeaderDOM from '@/components/HeaderDOM.vue';
 import MainBackground from '@/components/MainBackground.vue';

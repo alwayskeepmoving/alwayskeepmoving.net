@@ -24,10 +24,6 @@ defineProps({
   }
 })
 onMounted(() => {
-  function changeBlur(value) {
-    document.documentElement.style.setProperty("--initblur", value);
-  }
-
   let isExpanded = false;
   const body = document.querySelector('body');
   const globalfxdown = document.querySelector('.globalfx-down');

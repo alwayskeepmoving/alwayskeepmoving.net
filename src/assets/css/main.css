@@ -1,347 +1,344 @@
-        :root {
-            --initblur: 0px;
-        }
+/* 全局字体 */
+body {
+    background-color: rgb(10, 10, 10);
+    font-family: 'Inter', 'Misans';
+    font-weight: 500;
+    letter-spacing: 0em;
+}
 
-        /* 全局字体 */
-        body {
-            background-color: rgb(10, 10, 10);
-            font-family: 'Inter', 'Misans';
-            font-weight: 500;
-            letter-spacing: 0em;
-        }
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter.woff2);
+}
 
-        @font-face {
-            font-family: 'Inter';
-            src: url(../fonts/Inter.woff2);
-        }
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+    display: none;
+}
 
-        /* 隐藏滚动条 */
-        ::-webkit-scrollbar {
-            display: none;
-        }
+.layout {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
 
-        .layout {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
+/* 背景 */
+.main-background {
+    background-color: rgb(10, 10, 10);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-position: center 50px;
+    overflow-y: auto;
+}
 
-        /* 背景 */
-        .main-background {
-            background-color: rgb(10, 10, 10);
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-            background-position: center 50px;
-            overflow-y: auto;
-        }
+/* 禁止点击 */
+.noclick {
+    pointer-events: none;
+}
 
-        /* 禁止点击 */
-        .noclick {
-            pointer-events: none;
-        }
+/* 全局特效，不影响.headertop */
+.globalfx {
+    background-color: rgba(20, 20, 20, 0.4);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-position: center 50px;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.82, 0, 0.58, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 3;
+}
 
-        /* 全局特效，不影响.headertop */
-        .globalfx {
-            background-color: rgba(20, 20, 20, 0.4);
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            position: fixed;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            background-position: center 50px;
-            pointer-events: none;
-            transition: all 0.5s cubic-bezier(0.82, 0, 0.58, 1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 3;
-        }
+/* topfx透明度蒙版 */
+.globalfx-down {
+    background-color: rgba(20, 20, 20, 0.4);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-position: center 50px;
+    transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+    z-index: 1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    pointer-events: none;
+}
 
-        /* topfx透明度蒙版 */
-        .globalfx-down {
-            background-color: rgba(20, 20, 20, 0.4);
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            position: fixed;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            background-position: center 50px;
-            transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-            z-index: 1;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            pointer-events: none;
-        }
+/* 第一个顶栏 */
+.header-top {
+    width: 1000px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    z-index: 5;
+}
 
-        /* 第一个顶栏 */
-        .header-top {
-            width: 1000px;
-            height: auto;
-            margin: 0;
-            padding: 0;
-            left: 0;
-            top: 0;
-            align-items: center;
-            display: flex;
-            z-index: 5;
-        }
+.header-topbox {
+    --op: 0.2;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 20, 20, 1);
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    align-items: center;
+    display: flex;
+    z-index: 5;
+    transition: top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+}
 
-        .header-topbox {
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(20, 20, 20, 1);
-            width: 100%;
-            height: 50px;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            left: 0;
-            top: 0;
-            align-items: center;
-            display: flex;
-            z-index: 5;
-            transition: top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
-        }
+.top-fxbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1), top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    overflow-x: hidden;
+    z-index: 3;
+}
 
-        .top-fxbox {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(20, 20, 20);
-            width: 100%;
-            height: 50px;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            left: 0;
-            top: 0;
-            transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1), top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
-            overflow-x: hidden;
-            z-index: 3;
-        }
+/* 隐藏于第一个顶栏下方的矩形，用来做效果 */
+.top-fx {
+    width: 1000px;
+    height: 100%;
+    transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+}
 
-        /* 隐藏于第一个顶栏下方的矩形，用来做效果 */
-        .top-fx {
-            width: 1000px;
-            height: 100%;
-            transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-        }
+/* topFx中文字的参数，左菜单 */
+.header-fx {
+    height: 52px;
+    display: flex;
+    font-size: 26px;
+    font-weight: 600;
+    position: relative;
+    align-items: center;
+    top: 80px;
+    user-select: none;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.9;
+}
 
-        /* topFx中文字的参数，左菜单 */
-        .header-fx {
-            height: 52px;
-            display: flex;
-            font-size: 26px;
-            font-weight: 600;
-            position: relative;
-            align-items: center;
-            top: 80px;
-            user-select: none;
-            transition: all 0.3s ease-in-out;
-            opacity: 0.9;
-        }
+.header-fx:active {
+    opacity: 1;
+    text-shadow: 0px 0px 2px rgb(233, 233, 233);
+    transition: all 0.1s ease-in-out;
+}
 
-        .header-fx:active {
-            opacity: 1;
-            text-shadow: 0px 0px 2px rgb(233, 233, 233);
-            transition: all 0.1s ease-in-out;
-        }
+.downfxbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 50px;
+    z-index: 2;
+    transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+    flex-direction: column;
+    overflow-x: hidden;
+}
 
-        .downfxbox {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            background-color: rgb(0, 0, 0);
-            width: 100%;
-            height: 0px;
-            margin: 0;
-            padding: 0;
-            left: 0;
-            top: 50px;
-            z-index: 2;
-            transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-            flex-direction: column;
-            overflow-x: hidden;
-        }
+/* topfx特效蒙版 */
+.downfx {
+    height: 100%;
+    width: 100%;
+    transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+}
 
-        /* topfx特效蒙版 */
-        .downfx {
-            height: 100%;
-            width: 100%;
-            transition: height 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-        }
+/* downfx中的文字 */
+.downfx-text {
+    display: flex;
+    height: 40px;
+    font-size: 14px;
+    top: 60px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #ffffff;
+    line-height: 26px;
+    text-align: left;
+    transition: all 0.15s ease-in-out;
+    word-break: break-all;
+}
 
-        /* downfx中的文字 */
-        .downfx-text {
-            display: flex;
-            height: 40px;
-            font-size: 14px;
-            top: 60px;
-            position: relative;
-            margin-left: 20px;
-            margin-right: 20px;
-            color: #ffffff;
-            line-height: 26px;
-            text-align: left;
-            transition: all 0.15s ease-in-out;
-            word-break: break-all;
-        }
+/* 第二个顶栏左侧文字 */
+.left {
+    margin-left: 20px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    user-select: none;
+    transition: all 0.15s ease-in-out;
+    z-index: 3;
+}
 
-        /* 第二个顶栏左侧文字 */
-        .left {
-            margin-left: 20px;
-            font-size: 18px;
-            color: rgb(255, 255, 255);
-            user-select: none;
-            transition: all 0.15s ease-in-out;
-            z-index: 3;
-        }
+/* 分享按钮 */
+.share {
+    margin-right: 20px;
+    width: 50px;
+    height: 20px;
+    background-color: rgb(28, 81, 255);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    transition: all 0.15s ease-in-out;
+    user-select: none;
+    z-index: 3;
+}
 
-        /* 分享按钮 */
-        .share {
-            margin-right: 20px;
-            width: 50px;
-            height: 20px;
-            background-color: rgb(28, 81, 255);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: lighter;
-            color: rgb(255, 255, 255);
-            transition: all 0.15s ease-in-out;
-            user-select: none;
-            z-index: 3;
-        }
-
-        /* 按下分享按钮的效果 */
-        .share:active {
-            background-color: rgb(255, 255, 255);
-            color: rgb(28, 81, 255);
-        }
+/* 按下分享按钮的效果 */
+.share:active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(28, 81, 255);
+}
 
 
-        /* 汉堡菜单绝对定位容器 */
-        .hbgcontainer {
-            bottom: 1px;
-            position: relative;
-            height: 20px;
-            background-repeat: no-repeat;
-            width: 22px;
-            margin-left: 20px;
-            justify-content: center;
-            z-index: 5;
-            transition: all 0.15s ease-in-out;
-        }
+/* 汉堡菜单绝对定位容器 */
+.hbgcontainer {
+    bottom: 1px;
+    position: relative;
+    height: 20px;
+    background-repeat: no-repeat;
+    width: 22px;
+    margin-left: 20px;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.15s ease-in-out;
+}
 
-        /* 汉堡菜单，位于第一个顶栏 */
-        .hamburger {
-            position: absolute;
-            width: 22px;
-            height: 20px;
-            margin-top: 4px;
-            z-index: 5;
-            transition: opacity 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-        }
+/* 汉堡菜单，位于第一个顶栏 */
+.hamburger {
+    position: absolute;
+    width: 22px;
+    height: 20px;
+    margin-top: 4px;
+    z-index: 5;
+    transition: opacity 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+}
 
-        /* 按下汉堡菜单的动效 */
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            margin-bottom: 5px;
-            left: 20px;
-            transition: all 0.3s ease-in-out;
-        }
+/* 按下汉堡菜单的动效 */
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-bottom: 5px;
+    left: 20px;
+    transition: all 0.3s ease-in-out;
+}
 
-        /* shop按钮绝对定位容器 */
-        .shopcontainer {
-            position: relative;
-            height: 20px;
-            background-repeat: no-repeat;
-            width: 18px;
-            margin-right: 20px;
-            margin-left: auto;
-            float: right;
-            justify-content: center;
-            z-index: 5;
-            transition: all 0.15s ease-in-out;
-        }
+/* shop按钮绝对定位容器 */
+.shopcontainer {
+    position: relative;
+    height: 20px;
+    background-repeat: no-repeat;
+    width: 18px;
+    margin-right: 20px;
+    margin-left: auto;
+    float: right;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.15s ease-in-out;
+}
 
-        /* 商店按钮，位于第一个顶栏 */
-        .shop {
-            background-image: url("/img/shop.svg");
-            height: 20px;
-            background-repeat: no-repeat;
-            width: 18px;
-            display: flex;
-            margin-right: 20px;
-            margin-left: auto;
-            float: right;
-            justify-content: center;
-            z-index: 5;
-            position: absolute;
-            transition: opacity 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-        }
+/* 商店按钮，位于第一个顶栏 */
+.shop {
+    background-image: url("/img/shop.svg");
+    height: 20px;
+    background-repeat: no-repeat;
+    width: 18px;
+    display: flex;
+    margin-right: 20px;
+    margin-left: auto;
+    float: right;
+    justify-content: center;
+    z-index: 5;
+    position: absolute;
+    transition: opacity 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+}
 
-        /* shop按钮的动效 */
-        .shopfx {
-            background-color: #ffffff;
-            height: 15px;
-            width: 16px;
-            top: 4.5px;
-            opacity: 0;
-            display: flex;
-            margin-right: 20px;
-            margin-left: auto;
-            float: right;
-            justify-content: center;
-            z-index: 3;
-            position: absolute;
-            border-radius: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: all 0.6s cubic-bezier(0.82, 0, 0.58, 1);
-        }
+/* shop按钮的动效 */
+.shopfx {
+    background-color: #ffffff;
+    height: 15px;
+    width: 16px;
+    top: 4.5px;
+    opacity: 0;
+    display: flex;
+    margin-right: 20px;
+    margin-left: auto;
+    float: right;
+    justify-content: center;
+    z-index: 3;
+    position: absolute;
+    border-radius: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.6s cubic-bezier(0.82, 0, 0.58, 1);
+}
 
-        .shopmenubox {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(20, 20, 20);
-            width: 100%;
-            height: 50px;
-            margin: 0;
-            padding: 0;
-            position: fixed;
-            left: 0;
-            top: 0;
-            transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1), top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
-            ;
-            z-index: 5;
-            overflow-x: hidden;
-            text-align: right
-        }
+.shopmenubox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1), top 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    ;
+    z-index: 5;
+    overflow-x: hidden;
+    text-align: right
+}
 
-        /* 效果 */
-        .shopmenu {
-            width: 1000px;
-            height: 100%;
-            transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
-            text-align: right;
-        }
+/* 效果 */
+.shopmenu {
+    width: 1000px;
+    height: 100%;
+    transition: all 0.7s cubic-bezier(0.82, 0, 0.58, 1), filter 0.7s cubic-bezier(0.82, 0, 0.58, 1);
+    text-align: right;
+}
 
-        /* shopmenu中文字的参数，右菜单 */
-        /* .shopmenu-fx {
+/* shopmenu中文字的参数，右菜单 */
+/* .shopmenu-fx {
             font-weight: 600;
             font-size: 26px;
             position: relative;
@@ -353,27 +350,27 @@
             transition: all 0.15s ease-in-out;
         } */
 
-        /* 这个世界，需要白色 */
-        .white,
-        .black {
-            color: #ffffff;
-        }
+/* 这个世界，需要白色 */
+.white,
+.black {
+    color: #ffffff;
+}
 
-        /* 这个世界，不需要下划线 */
-        .underline {
-            text-decoration: none;
-        }
+/* 这个世界，不需要下划线 */
+.underline {
+    text-decoration: none;
+}
 
-        /* 网页框架 */
-        .framework {
-            display: flex;
-            border: 0;
-            width: 100%;
-            margin: auto;
-        }
+/* 网页框架 */
+.framework {
+    display: flex;
+    border: 0;
+    width: 100%;
+    margin: auto;
+}
 
-        .header-mmj {
-            width: 100%;
-            height: 50px;
-            display: flex;
-        }
+.header-mmj {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}

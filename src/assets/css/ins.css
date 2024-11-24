@@ -19,6 +19,10 @@
     display: flex;
 }
 
+.instagram:first-child {
+    margin-top: 50px;
+}
+
 .instagram .profile {
     width: 30px;
     height: 30px;
@@ -82,7 +86,7 @@ body {
 }
 
 .insbox {
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(20, 20, 20);
     display: flex;
     flex-direction: column;
     align-items: center;
