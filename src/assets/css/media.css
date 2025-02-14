@@ -1,23 +1,18 @@
 /* 响应式布局 */
-@media screen and (min-width:1000px) {
+@media screen and (min-width: 1000px) {
     .downfx {
         width: 1000px;
     }
-    
+
     .footer {
         width: 1000px;
     }
-
-    .ins-background {
-        width: 1000px;
-
-    }
 }
 
-@media (any-hover: hover){
-    .header-fx:hover{
+@media (any-hover: hover) {
+    .header-fx:hover {
         opacity: 1;
-        text-shadow: 0px 0px 2px rgb(233, 233, 233);
+        text-shadow: 0 0 2px rgb(233, 233, 233);
         transition: all 0.3s ease-in-out;
     }
 }

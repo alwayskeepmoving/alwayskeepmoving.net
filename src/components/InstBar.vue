@@ -93,7 +93,7 @@ const toggleStar = () => {
 .insbar {
     display: flex;
     height: 50px;
-    background-color: rgb(20, 20, 20);
+    background-color: var(--bg-color);
     align-items: center;
 }
 

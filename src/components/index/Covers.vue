@@ -2,50 +2,48 @@
   <main>
     <div class="coverbox">
       <div class="cover-background">
-        <img ref="cover" :src="imgSrc" @load="extractColors">
+        <img ref="cover" :src="imgSrc" @load="extractColors" alt="">
       </div>
-      <div ref="textArea" class="cover-text" :style="{ background: backgroundStyle }">
-        <div class="cover-title">{{ title }}</div>
-        <div class="cover-artist">{{ artist }}</div>
-        <div class="cover-year">{{ year }}</div>
+      <div class="cover-text">
+        <div class="textArea">
+          <div class="cover-title">{{ title }}</div>
+          <div class="cover-artist">{{ artist }}</div>
+        </div>
+        <Play :style="{ background: backgroundStyle }"></Play>
       </div>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import ColorThief from 'colorthief';
-import { ref } from 'vue';
-
 defineProps({
   imgSrc: {
     type: String,
-    required: false
+    required: true
   },
   title: {
     type: String,
-    required: false
+    required: true
   },
   artist: {
     type: String,
-    required: false
-  },
-  year: {
-    type: Number,
-    required: false
+    required: true
   }
 })
 
+import ColorThief from 'colorthief';
+import {ref} from 'vue';
+import Play from '../icons/Play.vue';
+
 const colorThief = new ColorThief();
 const cover = ref<HTMLImageElement | null>(null);
-const textArea = ref<HTMLElement | null>(null);
 const backgroundStyle = ref('');
 
 const extractColors = () => {
   if (cover.value && cover.value.complete) {
     try {
       // 颜色数组
-      const palette = colorThief.getPalette(cover.value, 9); // 获取最多 9 种颜色
+      const palette = colorThief.getPalette(cover.value, 10); // 获取最多 9 种颜色
 
       // 背景样式
       // @ts-ignore
@@ -71,48 +69,48 @@ const extractColors = () => {
 
 
 .coverbox {
-  /* transform: scale(0.8); */
-  --ch: 400px;
-  --cw: 300px;
-  background-color: black;
+  --ch: 650px;
+  --cw: 550px;
   height: var(--ch);
   width: var(--cw);
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  border-radius: 20px;
   box-sizing: border-box;
-  outline: rgba(255, 255, 255, .1) 2px solid;
-  outline-offset: -2px;
 }
 
 .cover-background {
+
   overflow: hidden;
   height: var(--cw);
 }
 
 .cover-background img {
   height: var(--cw);
-  width: auto;
+  width: var(--cw);
+  border-radius: 20px;
 }
 
 .cover-text {
   display: flex;
-  flex-direction: column;
   height: 100px;
   width: 100%;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   color: white;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: 17px;
+  line-height: 24px;
   letter-spacing: -1px;
   font-weight: 500;
 }
 
-.cover-artist,
-.cover-year {
-  color: rgba(255, 255, 255, 0.6);
+.textArea {
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.cover-artist {
+  color: rgba(255, 255, 255, 0.4);
 }
 </style>

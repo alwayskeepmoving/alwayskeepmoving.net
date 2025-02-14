@@ -80,7 +80,6 @@ onMounted(() => {
     border-radius: 50px;
     border-radius: 50px;
     position: relative;
-    line-height: 24px;
     cursor: pointer;
     color: var(--button-color);
     padding: 0;
@@ -116,7 +115,7 @@ onMounted(() => {
         z-index: 1;
         position: relative;
         display: block;
-        padding: 10px 28px;
+        padding: 10px 24px;
         box-sizing: border-box;
         width: fit-content;
         border-radius: inherit;

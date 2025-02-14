@@ -11,11 +11,16 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "fullpage.js": "^4.0.31",
+    "smooth-scrollbar": "^8.8.4",
     "vue": "^3.4.21",
-    "vue-router": "^4.4.5"
+    "vue-fullpage.js": "^0.2.20",
+    "vue-router": "^4.4.5",
+    "vue-scroll-snap": "^0.1.11"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
+    "@types/fullpage.js": "^2.9.6",
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/tsconfig": "^0.5.1",
